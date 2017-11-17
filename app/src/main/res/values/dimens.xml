@@ -10,4 +10,5 @@
     <dimen name="sp_16">16sp</dimen>
     <dimen name="dp_96">96dp</dimen>
     <dimen name="dp_480">480dp</dimen>
+    <dimen name="sp_20">20sp</dimen>
 </resources>

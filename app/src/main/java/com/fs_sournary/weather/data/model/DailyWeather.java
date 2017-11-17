@@ -9,14 +9,14 @@ import com.google.gson.annotations.SerializedName;
  * Description:
  */
 
-public class DailyWeather extends BaseDataWeather{
+public class DailyWeather extends BaseDataWeather {
 
     @SerializedName("sunriseTime")
     @Expose
-    private int mSunriseTime;
+    private double mSunriseTime;
     @SerializedName("sunsetTime")
     @Expose
-    private int mSunsetTime;
+    private double mSunsetTime;
     @SerializedName("moonPhase")
     @Expose
     private double mMoonPhase;
@@ -28,7 +28,7 @@ public class DailyWeather extends BaseDataWeather{
     private double mPrecipIntensityMax;
     @SerializedName("precipIntensityMaxTime")
     @Expose
-    private int mPrecipIntensityMaxTime;
+    private double mPrecipIntensityMaxTime;
     @SerializedName("precipProbability")
     @Expose
     private double mPrecipProbability;
@@ -40,72 +40,72 @@ public class DailyWeather extends BaseDataWeather{
     private double mTemperatureHigh;
     @SerializedName("temperatureHighTime")
     @Expose
-    private int mTemperatureHighTime;
+    private double mTemperatureHighTime;
     @SerializedName("temperatureLow")
     @Expose
     private double mTemperatureLow;
     @SerializedName("temperatureLowTime")
     @Expose
-    private int mTemperatureLowTime;
+    private double mTemperatureLowTime;
     @SerializedName("apparentTemperatureHigh")
     @Expose
     private double mApparentTemperatureHigh;
     @SerializedName("apparentTemperatureHighTime")
     @Expose
-    private int mApparentTemperatureHighTime;
+    private double mApparentTemperatureHighTime;
     @SerializedName("apparentTemperatureLow")
     @Expose
     private double mApparentTemperatureLow;
     @SerializedName("apparentTemperatureLowTime")
     @Expose
-    private int mApparentTemperatureLowTime;
+    private double mApparentTemperatureLowTime;
     @SerializedName("windGustTime")
     @Expose
-    private int mWindGustTime;
+    private double mWindGustTime;
     @SerializedName("uvIndexTime")
     @Expose
-    private int mUvIndexTime;
+    private double mUvIndexTime;
     @SerializedName("temperatureMin")
     @Expose
     private double mTemperatureMin;
     @SerializedName("temperatureMinTime")
     @Expose
-    private int mTemperatureMinTime;
+    private double mTemperatureMinTime;
     @SerializedName("temperatureMax")
     @Expose
     private double mTemperatureMax;
     @SerializedName("temperatureMaxTime")
     @Expose
-    private int mTemperatureMaxTime;
+    private double mTemperatureMaxTime;
     @SerializedName("apparentTemperatureMin")
     @Expose
     private double mApparentTemperatureMin;
     @SerializedName("apparentTemperatureMinTime")
     @Expose
-    private int mApparentTemperatureMinTime;
+    private double mApparentTemperatureMinTime;
     @SerializedName("apparentTemperatureMax")
     @Expose
     private double mApparentTemperatureMax;
     @SerializedName("apparentTemperatureMaxTime")
     @Expose
-    private int mApparentTemperatureMaxTime;
+    private double mApparentTemperatureMaxTime;
     @SerializedName("precipAccumulation")
     @Expose
     private double mPrecipAccumulation;
 
-    public int getSunriseTime() {
+    public double getSunriseTime() {
         return mSunriseTime;
     }
 
-    public void setSunriseTime(int sunriseTime) {
+    public void setSunriseTime(double sunriseTime) {
         mSunriseTime = sunriseTime;
     }
 
-    public int getSunsetTime() {
+    public double getSunsetTime() {
         return mSunsetTime;
     }
 
-    public void setSunsetTime(int sunsetTime) {
+    public void setSunsetTime(double sunsetTime) {
         mSunsetTime = sunsetTime;
     }
 
@@ -133,11 +133,11 @@ public class DailyWeather extends BaseDataWeather{
         mPrecipIntensityMax = precipIntensityMax;
     }
 
-    public int getPrecipIntensityMaxTime() {
+    public double getPrecipIntensityMaxTime() {
         return mPrecipIntensityMaxTime;
     }
 
-    public void setPrecipIntensityMaxTime(int precipIntensityMaxTime) {
+    public void setPrecipIntensityMaxTime(double precipIntensityMaxTime) {
         mPrecipIntensityMaxTime = precipIntensityMaxTime;
     }
 
@@ -165,11 +165,11 @@ public class DailyWeather extends BaseDataWeather{
         mTemperatureHigh = temperatureHigh;
     }
 
-    public int getTemperatureHighTime() {
+    public double getTemperatureHighTime() {
         return mTemperatureHighTime;
     }
 
-    public void setTemperatureHighTime(int temperatureHighTime) {
+    public void setTemperatureHighTime(double temperatureHighTime) {
         mTemperatureHighTime = temperatureHighTime;
     }
 
@@ -181,11 +181,11 @@ public class DailyWeather extends BaseDataWeather{
         mTemperatureLow = temperatureLow;
     }
 
-    public int getTemperatureLowTime() {
+    public double getTemperatureLowTime() {
         return mTemperatureLowTime;
     }
 
-    public void setTemperatureLowTime(int temperatureLowTime) {
+    public void setTemperatureLowTime(double temperatureLowTime) {
         mTemperatureLowTime = temperatureLowTime;
     }
 
@@ -197,11 +197,11 @@ public class DailyWeather extends BaseDataWeather{
         mApparentTemperatureHigh = apparentTemperatureHigh;
     }
 
-    public int getApparentTemperatureHighTime() {
+    public double getApparentTemperatureHighTime() {
         return mApparentTemperatureHighTime;
     }
 
-    public void setApparentTemperatureHighTime(int apparentTemperatureHighTime) {
+    public void setApparentTemperatureHighTime(double apparentTemperatureHighTime) {
         mApparentTemperatureHighTime = apparentTemperatureHighTime;
     }
 
@@ -213,27 +213,27 @@ public class DailyWeather extends BaseDataWeather{
         mApparentTemperatureLow = apparentTemperatureLow;
     }
 
-    public int getApparentTemperatureLowTime() {
+    public double getApparentTemperatureLowTime() {
         return mApparentTemperatureLowTime;
     }
 
-    public void setApparentTemperatureLowTime(int apparentTemperatureLowTime) {
+    public void setApparentTemperatureLowTime(double apparentTemperatureLowTime) {
         mApparentTemperatureLowTime = apparentTemperatureLowTime;
     }
 
-    public int getWindGustTime() {
+    public double getWindGustTime() {
         return mWindGustTime;
     }
 
-    public void setWindGustTime(int windGustTime) {
+    public void setWindGustTime(double windGustTime) {
         mWindGustTime = windGustTime;
     }
 
-    public int getUvIndexTime() {
+    public double getUvIndexTime() {
         return mUvIndexTime;
     }
 
-    public void setUvIndexTime(int uvIndexTime) {
+    public void setUvIndexTime(double uvIndexTime) {
         mUvIndexTime = uvIndexTime;
     }
 
@@ -245,11 +245,11 @@ public class DailyWeather extends BaseDataWeather{
         mTemperatureMin = temperatureMin;
     }
 
-    public int getTemperatureMinTime() {
+    public double getTemperatureMinTime() {
         return mTemperatureMinTime;
     }
 
-    public void setTemperatureMinTime(int temperatureMinTime) {
+    public void setTemperatureMinTime(double temperatureMinTime) {
         mTemperatureMinTime = temperatureMinTime;
     }
 
@@ -261,11 +261,11 @@ public class DailyWeather extends BaseDataWeather{
         mTemperatureMax = temperatureMax;
     }
 
-    public int getTemperatureMaxTime() {
+    public double getTemperatureMaxTime() {
         return mTemperatureMaxTime;
     }
 
-    public void setTemperatureMaxTime(int temperatureMaxTime) {
+    public void setTemperatureMaxTime(double temperatureMaxTime) {
         mTemperatureMaxTime = temperatureMaxTime;
     }
 
@@ -277,11 +277,11 @@ public class DailyWeather extends BaseDataWeather{
         mApparentTemperatureMin = apparentTemperatureMin;
     }
 
-    public int getApparentTemperatureMinTime() {
+    public double getApparentTemperatureMinTime() {
         return mApparentTemperatureMinTime;
     }
 
-    public void setApparentTemperatureMinTime(int apparentTemperatureMinTime) {
+    public void setApparentTemperatureMinTime(double apparentTemperatureMinTime) {
         mApparentTemperatureMinTime = apparentTemperatureMinTime;
     }
 
@@ -293,11 +293,11 @@ public class DailyWeather extends BaseDataWeather{
         mApparentTemperatureMax = apparentTemperatureMax;
     }
 
-    public int getApparentTemperatureMaxTime() {
+    public double getApparentTemperatureMaxTime() {
         return mApparentTemperatureMaxTime;
     }
 
-    public void setApparentTemperatureMaxTime(int apparentTemperatureMaxTime) {
+    public void setApparentTemperatureMaxTime(double apparentTemperatureMaxTime) {
         mApparentTemperatureMaxTime = apparentTemperatureMaxTime;
     }
 
