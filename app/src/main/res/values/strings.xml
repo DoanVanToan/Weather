@@ -3,4 +3,7 @@
     <string name="title_current">Current</string>
     <string name="title_forecast">Forecast</string>
     <string name="title_history">History</string>
+
+    <!-- Used for next commit -->
+    <!--<string name="description_weather">Weather</string>-->
 </resources>
