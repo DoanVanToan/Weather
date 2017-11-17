@@ -3,7 +3,20 @@
     <string name="title_current">Current</string>
     <string name="title_forecast">Forecast</string>
     <string name="title_history">History</string>
-
-    <!-- Used for next commit -->
-    <!--<string name="description_weather">Weather</string>-->
+    <string name="description_weather">Weather</string>
+    <string name="title_nearest_storm_distance">Nearest storm distance</string>
+    <string name="title_nearest_storm_bearing">Nearest storm bearing</string>
+    <string name="title_precipice_intensity">Precip intensity</string>
+    <string name="title_precipice_probability">Precip probability</string>
+    <string name="title_apparent_temperature">Apparent temperature</string>
+    <string name="title_dew_point">Dew point</string>
+    <string name="title_humidity">humidity</string>
+    <string name="title_pressure">Pressure</string>
+    <string name="title_wind_speed">WindSpeed</string>
+    <string name="title_wind_gust">WindGust</string>
+    <string name="title_wind_bearing">Wind bearing</string>
+    <string name="title_cloud_cover">Cloud cover</string>
+    <string name="title_uv_index">Uv index</string>
+    <string name="title_visibility">Visibility</string>
+    <string name="title_ozone">Ozone</string>
 </resources>
