@@ -29,7 +29,6 @@ public class MainActivity extends BaseActivity {
                 .build()
                 .inject(this);
         binding.setViewModel(mViewModel);
-
         CurrentWeatherFragment currentWeatherFragment =
                 (CurrentWeatherFragment) getSupportFragmentManager()
                 .findFragmentByTag(Constant.CURRENT_FRAGMENT_TAG);
