@@ -13,7 +13,8 @@ import com.fs_sournary.weather.data.model.GenerateWeather;
 import com.fs_sournary.weather.screen.BaseViewModel;
 import com.fs_sournary.weather.utils.Constant;
 import com.fs_sournary.weather.utils.ConvertTimeUtils;
-import com.fs_sournary.weather.utils.ImageWeather;
+import com.fs_sournary.weather.utils.definition.ImageWeather;
+import com.fs_sournary.weather.widget.dialog.DialogManager;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -37,11 +38,14 @@ public class CurrentViewModel extends BaseObservable implements BaseViewModel {
     private WeatherRepository mWeatherRepository;
     private CompositeDisposable mCompositeDisposable;
     private ConvertTimeUtils mConvertTimeUtils;
+    private DialogManager mDialogManager;
     private String mLocation;
 
-    CurrentViewModel(WeatherRepository repository, ConvertTimeUtils convertTimeUtils) {
+    CurrentViewModel(WeatherRepository repository, ConvertTimeUtils convertTimeUtils,
+                     DialogManager dialogManager) {
         mWeatherRepository = repository;
         mConvertTimeUtils = convertTimeUtils;
+        mDialogManager = dialogManager;
         mCompositeDisposable = new CompositeDisposable();
     }
 
@@ -51,6 +55,7 @@ public class CurrentViewModel extends BaseObservable implements BaseViewModel {
     }
 
     void showCurrentWeather(String location) {
+        mDialogManager.showDialog();
         mLocation = location;
         Disposable disposable = mWeatherRepository.getCurrentWeather(BuildConfig.API_KEY, location)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -73,7 +78,7 @@ public class CurrentViewModel extends BaseObservable implements BaseViewModel {
 
                     @Override
                     public void onComplete() {
-
+                        mDialogManager.dismissDialog();
                     }
                 });
         mCompositeDisposable.add(disposable);

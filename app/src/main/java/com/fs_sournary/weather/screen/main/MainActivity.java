@@ -13,8 +13,8 @@ import com.fs_sournary.weather.R;
 import com.fs_sournary.weather.databinding.ActivityMainBinding;
 import com.fs_sournary.weather.screen.BaseActivity;
 import com.fs_sournary.weather.screen.main.fragment.current.CurrentWeatherFragment;
+import com.fs_sournary.weather.utils.ActivityUtils;
 import com.fs_sournary.weather.utils.Constant;
-import com.fs_sournary.weather.utils.navigator.ActivityNavigator;
 
 import javax.inject.Inject;
 
@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity {
                         .findFragmentByTag(Constant.CURRENT_FRAGMENT_TAG);
         if (currentWeatherFragment == null) {
             currentWeatherFragment = CurrentWeatherFragment.newInstance();
-            ActivityNavigator.addFragmentToActivity(getSupportFragmentManager(),
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
                     R.id.frame_place_holder, currentWeatherFragment,
                     Constant.CURRENT_FRAGMENT_TAG);
         }

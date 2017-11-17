@@ -7,6 +7,8 @@ import com.fs_sournary.weather.data.source.remote.WeatherRemoteDataSource;
 import com.fs_sournary.weather.data.source.remote.api.service.WeatherApi;
 import com.fs_sournary.weather.utils.ConvertTimeUtils;
 import com.fs_sournary.weather.utils.scope.FragmentScope;
+import com.fs_sournary.weather.widget.dialog.DialogManager;
+import com.fs_sournary.weather.widget.dialog.ProgressDialogImpl;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
@@ -59,9 +61,16 @@ class CurrentModule {
 
     @FragmentScope
     @Provides
+    DialogManager provideDialogManager() {
+        return new ProgressDialogImpl(mFragment.getActivity());
+    }
+
+    @FragmentScope
+    @Provides
     CurrentViewModel provideCurrentViewModel(WeatherRepository weatherRepository,
-                                             ConvertTimeUtils convertTimeUtils) {
-        return new CurrentViewModel(weatherRepository, convertTimeUtils);
+                                             ConvertTimeUtils convertTimeUtils,
+                                             DialogManager dialogManager) {
+        return new CurrentViewModel(weatherRepository, convertTimeUtils, dialogManager);
     }
 
 }

@@ -65,7 +65,6 @@ public class GenerateWeather {
 
     public void setDailyResponse(DailyResponse dailyResponse) {
         mDailyResponse = dailyResponse;
-
     }
 
 }

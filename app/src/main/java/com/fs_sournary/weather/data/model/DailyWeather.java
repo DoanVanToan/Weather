@@ -59,12 +59,6 @@ public class DailyWeather extends BaseDataWeather {
     @SerializedName("apparentTemperatureLowTime")
     @Expose
     private double mApparentTemperatureLowTime;
-    @SerializedName("windGustTime")
-    @Expose
-    private double mWindGustTime;
-    @SerializedName("uvIndexTime")
-    @Expose
-    private double mUvIndexTime;
     @SerializedName("temperatureMin")
     @Expose
     private double mTemperatureMin;
@@ -219,22 +213,6 @@ public class DailyWeather extends BaseDataWeather {
 
     public void setApparentTemperatureLowTime(double apparentTemperatureLowTime) {
         mApparentTemperatureLowTime = apparentTemperatureLowTime;
-    }
-
-    public double getWindGustTime() {
-        return mWindGustTime;
-    }
-
-    public void setWindGustTime(double windGustTime) {
-        mWindGustTime = windGustTime;
-    }
-
-    public double getUvIndexTime() {
-        return mUvIndexTime;
-    }
-
-    public void setUvIndexTime(double uvIndexTime) {
-        mUvIndexTime = uvIndexTime;
     }
 
     public double getTemperatureMin() {
