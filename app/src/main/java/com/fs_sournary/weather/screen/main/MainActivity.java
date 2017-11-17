@@ -1,9 +1,11 @@
-package com.fs_sournary.weather;
+package com.fs_sournary.weather.screen.main;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.fs_sournary.weather.R;
+import com.fs_sournary.weather.screen.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
