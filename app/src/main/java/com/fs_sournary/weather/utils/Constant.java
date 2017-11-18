@@ -13,4 +13,7 @@ public class Constant {
     public static final String CURRENT_FRAGMENT_TAG = "current_fragment";
     public static final String TITLE_LAST_UPDATE = "Last updated: ";
 
+    public static final int COUNT_FRAGMENT_MAIN = 3;
+    public static final int COUNT_OFFSET_FRAGMENT_RETAIN = 2;
+
 }

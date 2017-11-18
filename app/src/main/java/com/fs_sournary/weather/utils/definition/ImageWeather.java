@@ -28,8 +28,8 @@ public @interface ImageWeather {
     String CLOUDY = "cloudy";
     String PARTLY_CLOUDY_DAY = "partly-cloudy-day";
     String PARTLY_CLOUDY_NIGHT = "partly-cloudy-night";
-    String SNOW = "ic_snow";
+    String SNOW = "snow";
     String SLEET = "sleet";
-    String FOG = "ic_fog";
-    String WIND = "ic_wind";
+    String FOG = "fog";
+    String WIND = "wind";
 }

@@ -1,8 +1,7 @@
 package com.fs_sournary.weather.screen.main;
 
-import android.databinding.BaseObservable;
-
 import com.fs_sournary.weather.screen.BaseViewModel;
+import com.fs_sournary.weather.utils.Constant;
 
 /**
  * Created by fs-sournary.
@@ -10,13 +9,25 @@ import com.fs_sournary.weather.screen.BaseViewModel;
  * Description:
  */
 
-public class MainViewModel extends BaseObservable implements BaseViewModel {
+public class MainViewModel implements BaseViewModel {
 
-    MainViewModel() {
+    private MainPagerAdapter mMainPagerAdapter;
+
+    MainViewModel(MainPagerAdapter mainPagerAdapter) {
+        mMainPagerAdapter = mainPagerAdapter;
     }
 
     @Override
     public void onDestroy() {
 
     }
+
+    public MainPagerAdapter getMainPagerAdapter() {
+        return mMainPagerAdapter;
+    }
+
+    public int getOffset() {
+        return Constant.COUNT_OFFSET_FRAGMENT_RETAIN;
+    }
+
 }

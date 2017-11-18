@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="view"
+            type="com.fs_sournary.weather.screen.main.MainActivity" />
 
         <variable
             name="viewModel"
@@ -30,33 +35,19 @@
             app:tabMode="fixed"
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextAppearance="@style/TextAppearance.AppCompat.Title"
-            app:tabTextColor="@android:color/white">
+            app:tabTextColor="@android:color/white"
+            bind:connect="@{view.viewPager}" />
 
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/title_current" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/title_forecast" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/title_history" />
-
-        </android.support.design.widget.TabLayout>
-
-        <FrameLayout
-            android:id="@+id/frame_place_holder"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_place_holder"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tab" />
+            app:layout_constraintTop_toBottomOf="@id/tab"
+            bind:adapter="@{viewModel.mainPagerAdapter}"
+            bind:offset="@{viewModel.offset}" />
 
     </android.support.constraint.ConstraintLayout>
 
