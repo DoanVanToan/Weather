@@ -11,4 +11,6 @@
     <dimen name="dp_96">96dp</dimen>
     <dimen name="dp_480">480dp</dimen>
     <dimen name="sp_20">20sp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_240">240dp</dimen>
 </resources>

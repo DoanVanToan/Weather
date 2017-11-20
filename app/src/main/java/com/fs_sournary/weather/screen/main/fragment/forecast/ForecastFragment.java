@@ -1,13 +1,19 @@
 package com.fs_sournary.weather.screen.main.fragment.forecast;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fs_sournary.weather.MainApplication;
 import com.fs_sournary.weather.R;
+import com.fs_sournary.weather.databinding.FragmentForecastBinding;
 import com.fs_sournary.weather.screen.BaseFragment;
+import com.fs_sournary.weather.utils.Constant;
+
+import javax.inject.Inject;
 
 /**
  * Created by fs-sournary.
@@ -17,17 +23,38 @@ import com.fs_sournary.weather.screen.BaseFragment;
 
 public class ForecastFragment extends BaseFragment {
 
-    public static ForecastFragment newInstance() {
-        return new ForecastFragment();
+    @Inject
+    ForecastViewModel mForecastViewModel;
+
+    public static ForecastFragment newInstance(String location) {
+        ForecastFragment forecastFragment = new ForecastFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(Constant.ARGUMENT_LOCATION, location);
+        forecastFragment.setArguments(bundle);
+        return forecastFragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Demo for displaying when use with ViewPager and TabLayout
-        // I will fix this later
-        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
-        return view;
+        DaggerForecastComponent.builder()
+                .applicationComponent(
+                        ((MainApplication) getActivity().getApplication()).getComponent())
+                .forecastModule(new ForecastModule(this))
+                .build()
+                .inject(this);
+        FragmentForecastBinding binding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_forecast, container, false);
+        binding.setViewModel(mForecastViewModel);
+        String location = getArguments().getString(Constant.ARGUMENT_LOCATION);
+        mForecastViewModel.showCurrentWeather(location);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mForecastViewModel.onDestroy();
     }
 }

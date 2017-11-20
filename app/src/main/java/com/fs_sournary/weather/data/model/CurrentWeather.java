@@ -34,7 +34,7 @@ public class CurrentWeather extends BaseDataWeather {
         return mNearestStormDistance;
     }
 
-    public void setNearestStormDistance(double nearestStormDistance) {
+    public void setNearestStormDistance(int nearestStormDistance) {
         mNearestStormDistance = nearestStormDistance;
     }
 
@@ -42,7 +42,7 @@ public class CurrentWeather extends BaseDataWeather {
         return mNearestStormBearing;
     }
 
-    public void setNearestStormBearing(double nearestStormBearing) {
+    public void setNearestStormBearing(int nearestStormBearing) {
         mNearestStormBearing = nearestStormBearing;
     }
 
@@ -50,7 +50,7 @@ public class CurrentWeather extends BaseDataWeather {
         return mPrecipIntensity;
     }
 
-    public void setPrecipIntensity(double precipIntensity) {
+    public void setPrecipIntensity(int precipIntensity) {
         mPrecipIntensity = precipIntensity;
     }
 
@@ -58,7 +58,7 @@ public class CurrentWeather extends BaseDataWeather {
         return mPrecipProbability;
     }
 
-    public void setPrecipProbability(double precipProbability) {
+    public void setPrecipProbability(int precipProbability) {
         mPrecipProbability = precipProbability;
     }
 

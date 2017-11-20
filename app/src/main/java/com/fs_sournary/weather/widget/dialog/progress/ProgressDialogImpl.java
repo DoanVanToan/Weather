@@ -1,9 +1,10 @@
-package com.fs_sournary.weather.widget.dialog;
+package com.fs_sournary.weather.widget.dialog.progress;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.fs_sournary.weather.R;
+import com.fs_sournary.weather.widget.dialog.DialogManager;
 
 /**
  * Created by fs-sournary.
