@@ -13,7 +13,7 @@ public class BaseDataWeather {
 
     @SerializedName("time")
     @Expose
-    private int mTime;
+    private double mTime;
     @SerializedName("summary")
     @Expose
     private String mSummary;
@@ -37,25 +37,25 @@ public class BaseDataWeather {
     private double mWindGust;
     @SerializedName("windBearing")
     @Expose
-    private int mWindBearing;
+    private double mWindBearing;
     @SerializedName("cloudCover")
     @Expose
     private double mCloudCover;
     @SerializedName("uvIndex")
     @Expose
-    private int mUvIndex;
+    private double mUvIndex;
     @SerializedName("visibility")
     @Expose
-    private int mVisibility;
+    private double mVisibility;
     @SerializedName("ozone")
     @Expose
     private double mOzone;
 
-    public int getTime() {
+    public double getTime() {
         return mTime;
     }
 
-    public void setTime(int time) {
+    public void setTime(double time) {
         mTime = time;
     }
 
@@ -115,11 +115,11 @@ public class BaseDataWeather {
         mWindGust = windGust;
     }
 
-    public int getWindBearing() {
+    public double getWindBearing() {
         return mWindBearing;
     }
 
-    public void setWindBearing(int windBearing) {
+    public void setWindBearing(double windBearing) {
         mWindBearing = windBearing;
     }
 
@@ -131,19 +131,19 @@ public class BaseDataWeather {
         mCloudCover = cloudCover;
     }
 
-    public int getUvIndex() {
+    public double getUvIndex() {
         return mUvIndex;
     }
 
-    public void setUvIndex(int uvIndex) {
+    public void setUvIndex(double uvIndex) {
         mUvIndex = uvIndex;
     }
 
-    public int getVisibility() {
+    public double getVisibility() {
         return mVisibility;
     }
 
-    public void setVisibility(int visibility) {
+    public void setVisibility(double visibility) {
         mVisibility = visibility;
     }
 

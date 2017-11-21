@@ -13,16 +13,16 @@ public class CurrentWeather extends BaseDataWeather {
 
     @SerializedName("nearestStormDistance")
     @Expose
-    private int mNearestStormDistance;
+    private double mNearestStormDistance;
     @SerializedName("nearestStormBearing")
     @Expose
-    private int mNearestStormBearing;
+    private double mNearestStormBearing;
     @SerializedName("precipIntensity")
     @Expose
-    private int mPrecipIntensity;
+    private double mPrecipIntensity;
     @SerializedName("precipProbability")
     @Expose
-    private int mPrecipProbability;
+    private double mPrecipProbability;
     @SerializedName("temperature")
     @Expose
     private double mTemperature;
@@ -30,35 +30,35 @@ public class CurrentWeather extends BaseDataWeather {
     @Expose
     private double mApparentTemperature;
 
-    public int getNearestStormDistance() {
+    public double getNearestStormDistance() {
         return mNearestStormDistance;
     }
 
-    public void setNearestStormDistance(int nearestStormDistance) {
+    public void setNearestStormDistance(double nearestStormDistance) {
         mNearestStormDistance = nearestStormDistance;
     }
 
-    public int getNearestStormBearing() {
+    public double getNearestStormBearing() {
         return mNearestStormBearing;
     }
 
-    public void setNearestStormBearing(int nearestStormBearing) {
+    public void setNearestStormBearing(double nearestStormBearing) {
         mNearestStormBearing = nearestStormBearing;
     }
 
-    public int getPrecipIntensity() {
+    public double getPrecipIntensity() {
         return mPrecipIntensity;
     }
 
-    public void setPrecipIntensity(int precipIntensity) {
+    public void setPrecipIntensity(double precipIntensity) {
         mPrecipIntensity = precipIntensity;
     }
 
-    public int getPrecipProbability() {
+    public double getPrecipProbability() {
         return mPrecipProbability;
     }
 
-    public void setPrecipProbability(int precipProbability) {
+    public void setPrecipProbability(double precipProbability) {
         mPrecipProbability = precipProbability;
     }
 

@@ -15,6 +15,19 @@
         <variable
             name="thirdTitle"
             type="String" />
+
+        <variable
+            name="firstDetail"
+            type="String" />
+
+        <variable
+            name="secondDetail"
+            type="String" />
+
+        <variable
+            name="thirdDetail"
+            type="String" />
+
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -24,7 +37,7 @@
         <TableRow
             android:id="@+id/table_row_first"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_48"
+            android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -32,36 +45,39 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"
+                android:text="@{firstDetail}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
-                android:textSize="@dimen/sp_24" />
+                android:textSize="@dimen/sp_20" />
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"
+                android:text="@{secondDetail}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
-                android:textSize="@dimen/sp_24" />
+                android:textSize="@dimen/sp_20" />
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"
+                android:text="@{thirdDetail}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
-                android:textSize="@dimen/sp_24" />
+                android:textSize="@dimen/sp_20" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_48"
+            android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -69,7 +85,7 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"
@@ -79,7 +95,7 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"
@@ -89,7 +105,7 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="@dimen/dp_4"

@@ -11,134 +11,144 @@
     </data>
 
     <android.support.v4.widget.SwipeRefreshLayout
-        onRefreshing="@{viewModel.onRefreshListener}"
-        refreshState="@{viewModel.isRefresh}"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        bind:onRefreshing="@{viewModel.onRefreshListener}"
+        bind:refreshState="@{viewModel.isRefresh}">
 
-        <ScrollView
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/dp_16"
-            android:background="@color/colorPrimary">
+            android:layout_height="wrap_content">
 
-            <android.support.constraint.ConstraintLayout
+            <TextView
+                android:id="@+id/text_template"
+                style="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@{String.valueOf(viewModel.currentWeather.temperature)}"
+                android:textSize="@dimen/sp_32"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_o"
+                style="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/title_o"
+                app:layout_constraintLeft_toRightOf="@id/text_template"
+                app:layout_constraintTop_toTopOf="@id/text_template" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="@dimen/dp_4"
+                app:layout_constraintLeft_toRightOf="@id/text_o"
+                app:layout_constraintTop_toTopOf="@id/text_o" />
+
+            <TextView
+                android:id="@+id/text_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@{viewModel.currentWeather.summary}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_template" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@{viewModel.time}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_summary" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_96"
+                android:layout_height="@dimen/dp_96"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:contentDescription="@string/description_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_template"
+                bind:image="@{viewModel.icon}" />
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_48"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/text_date">
 
-                <TextView
-                    android:id="@+id/text_template"
-                    style="@style/TextAppearance.AppCompat.Title.Inverse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginTop="@dimen/dp_16"
-                    android:textSize="@dimen/sp_32"
-                    android:text="@{viewModel.temperate}"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/text_o"
-                    style="@style/TextAppearance.AppCompat.Title.Inverse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    app:layout_constraintLeft_toRightOf="@id/text_template"
-                    app:layout_constraintTop_toTopOf="@id/text_template" />
-
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Title.Inverse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="@dimen/dp_4"
-                    app:layout_constraintLeft_toRightOf="@id/text_o"
-                    app:layout_constraintTop_toTopOf="@id/text_o" />
-
-                <TextView
-                    android:id="@+id/text_summary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginTop="@dimen/dp_8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_template" />
-
-                <TextView
-                    android:id="@+id/text_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginTop="@dimen/dp_8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
-                    android:textSize="@dimen/sp_16"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_summary" />
-
-                <ImageView
-                    android:layout_width="@dimen/dp_96"
-                    android:layout_height="@dimen/dp_96"
-                    android:layout_marginEnd="@dimen/dp_8"
-                    android:layout_marginStart="@dimen/dp_16"
-                    android:layout_marginTop="@dimen/dp_8"
-                    android:contentDescription="@string/description_weather"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/text_template" />
-
-                <android.support.v7.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_480"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/dp_8"
                     android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginTop="@dimen/dp_16"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:cardCornerRadius="@dimen/dp_8"
-                    app:layout_constraintTop_toBottomOf="@id/text_date">
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                    <include
+                        layout="@layout/row_main_current"
+                        bind:firstDetail="@{String.valueOf(viewModel.currentWeather.nearestStormDistance)}"
+                        bind:firstTitle="@{@string/title_nearest_storm_distance}"
+                        bind:secondDetail="@{String.valueOf(viewModel.currentWeather.nearestStormBearing)}"
+                        bind:secondTitle="@{@string/title_nearest_storm_bearing}"
+                        bind:thirdDetail="@{String.valueOf(viewModel.currentWeather.precipIntensity)}"
+                        bind:thirdTitle="@{@string/title_precipice_intensity}" />
 
-                        <include
-                            layout="@layout/row_main_current"
-                            bind:firstTitle="@{@string/title_nearest_storm_distance}"
-                            bind:secondTitle="@{@string/title_nearest_storm_bearing}"
-                            bind:thirdTitle="@{@string/title_precipice_intensity}" />
+                    <include
+                        layout="@layout/row_main_current"
+                        bind:firstDetail="@{String.valueOf(viewModel.currentWeather.precipProbability)}"
+                        bind:firstTitle="@{@string/title_precipice_probability}"
+                        bind:secondDetail="@{String.valueOf(viewModel.currentWeather.apparentTemperature)}"
+                        bind:secondTitle="@{@string/title_apparent_temperature}"
+                        bind:thirdDetail="@{String.valueOf(viewModel.currentWeather.dewPoint)}"
+                        bind:thirdTitle="@{@string/title_dew_point}" />
 
-                        <include
-                            layout="@layout/row_main_current"
-                            bind:firstTitle="@{@string/title_precipice_probability}"
-                            bind:secondTitle="@{@string/title_apparent_temperature}"
-                            bind:thirdTitle="@{@string/title_dew_point}" />
+                    <include
+                        layout="@layout/row_main_current"
+                        bind:firstDetail="@{String.valueOf(viewModel.currentWeather.humidity)}"
+                        bind:firstTitle="@{@string/title_humidity}"
+                        bind:secondDetail="@{String.valueOf(viewModel.currentWeather.pressure)}"
+                        bind:secondTitle="@{@string/title_pressure}"
+                        bind:thirdDetail="@{String.valueOf(viewModel.currentWeather.windSpeed)}"
+                        bind:thirdTitle="@{@string/title_wind_speed}" />
 
-                        <include
-                            layout="@layout/row_main_current"
-                            bind:firstTitle="@{@string/title_humidity}"
-                            bind:secondTitle="@{@string/title_pressure}"
-                            bind:thirdTitle="@{@string/title_wind_speed}" />
+                    <include
+                        layout="@layout/row_main_current"
+                        bind:firstDetail="@{String.valueOf(viewModel.currentWeather.windGust)}"
+                        bind:firstTitle="@{@string/title_wind_gust}"
+                        bind:secondDetail="@{String.valueOf(viewModel.currentWeather.windBearing)}"
+                        bind:secondTitle="@{@string/title_wind_bearing}"
+                        bind:thirdDetail="@{String.valueOf(viewModel.currentWeather.cloudCover)}"
+                        bind:thirdTitle="@{@string/title_cloud_cover}" />
 
-                        <include
-                            layout="@layout/row_main_current"
-                            bind:firstTitle="@{@string/title_wind_gust}"
-                            bind:secondTitle="@{@string/title_wind_bearing}"
-                            bind:thirdTitle="@{@string/title_cloud_cover}" />
+                    <include
+                        layout="@layout/row_main_current"
+                        bind:firstDetail="@{String.valueOf(viewModel.currentWeather.uvIndex)}"
+                        bind:firstTitle="@{@string/title_uv_index}"
+                        bind:secondDetail="@{String.valueOf(viewModel.currentWeather.visibility)}"
+                        bind:secondTitle="@{@string/title_visibility}"
+                        bind:thirdDetail="@{String.valueOf(viewModel.currentWeather.ozone)}"
+                        bind:thirdTitle="@{@string/title_ozone}" />
 
-                        <include
-                            layout="@layout/row_main_current"
-                            bind:firstTitle="@{@string/title_uv_index}"
-                            bind:secondTitle="@{@string/title_visibility}"
-                            bind:thirdTitle="@{@string/title_ozone}" />
+                </LinearLayout>
 
-                    </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-                </android.support.v7.widget.CardView>
-
-            </android.support.constraint.ConstraintLayout>
-
-        </ScrollView>
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

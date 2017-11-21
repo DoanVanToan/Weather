@@ -10,7 +10,7 @@
     <string name="title_precipice_probability">Precip probability</string>
     <string name="title_apparent_temperature">Apparent temperature</string>
     <string name="title_dew_point">Dew point</string>
-    <string name="title_humidity">humidity</string>
+    <string name="title_humidity">Humidity</string>
     <string name="title_pressure">Pressure</string>
     <string name="title_wind_speed">WindSpeed</string>
     <string name="title_wind_gust">WindGust</string>
@@ -19,4 +19,5 @@
     <string name="title_uv_index">Uv index</string>
     <string name="title_visibility">Visibility</string>
     <string name="title_ozone">Ozone</string>
+    <string name="title_o">o</string>
 </resources>
