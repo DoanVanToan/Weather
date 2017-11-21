@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.fs_sournary.weather.data.source.RepositoryModule;
 import com.fs_sournary.weather.data.source.remote.NetWorkModule;
+import com.fs_sournary.weather.data.source.remote.api.service.WeatherApi;
 import com.fs_sournary.weather.utils.scope.ApplicationScope;
 
 import dagger.Component;
@@ -19,5 +20,7 @@ import dagger.Component;
 public interface ApplicationComponent {
 
     Context applicationContext();
+
+    WeatherApi weatherApi();
 
 }
