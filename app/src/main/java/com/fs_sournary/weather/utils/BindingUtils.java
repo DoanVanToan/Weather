@@ -12,15 +12,10 @@ import android.widget.ImageView;
 
 public class BindingUtils {
 
-    @BindingAdapter({"bind:onRefreshing"})
+    @BindingAdapter({"bind:onRefresh"})
     public static void setOnRefreshing(SwipeRefreshLayout layout,
                                        SwipeRefreshLayout.OnRefreshListener listener) {
         layout.setOnRefreshListener(listener);
-    }
-
-    @BindingAdapter({"bind:refreshState"})
-    public static void setRefreshState(SwipeRefreshLayout layout, boolean isRefresh) {
-        layout.setRefreshing(isRefresh);
     }
 
     @BindingAdapter({"bind:image"})

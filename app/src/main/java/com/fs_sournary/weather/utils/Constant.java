@@ -9,11 +9,8 @@ package com.fs_sournary.weather.utils;
 public class Constant {
 
     public static final String BASE_URL_API = "https://api.darksky.net/";
-
     public static final int RC_LOCATION = 1;
-
     public static final String CURRENT_FRAGMENT_TAG = "current_fragment";
-
     public static final String TITLE_LAST_UPDATE = "Last updated: ";
 
 }

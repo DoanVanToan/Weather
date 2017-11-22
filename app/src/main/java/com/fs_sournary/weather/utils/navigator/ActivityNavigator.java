@@ -1,8 +1,7 @@
 package com.fs_sournary.weather.utils.navigator;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.app.Activity;
+import android.content.Intent;
 
 /**
  * Created by fs-sournary.
@@ -12,11 +11,9 @@ import android.support.v4.app.FragmentTransaction;
 
 public class ActivityNavigator {
 
-    public static void addFragmentToActivity(FragmentManager fragmentManager, int placeHolder,
-                                             Fragment fragment, String tag) {
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(placeHolder, fragment, tag);
-        transaction.commit();
+    public static void startActivity(Activity activity, Class<? extends Activity> clazz) {
+        Intent intent = new Intent(activity, clazz);
+        activity.startActivity(intent);
     }
 
 }
