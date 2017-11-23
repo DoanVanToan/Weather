@@ -63,6 +63,7 @@ public class CurrentViewModel extends BaseObservable implements BaseViewModel {
                 .subscribeWith(new DisposableObserver<GenerateWeather>() {
                     @Override
                     public void onNext(GenerateWeather generateWeather) {
+
                         CurrentWeather currentWeather = generateWeather.getCurrentWeather();
                         String current = Constant.TITLE_LAST_UPDATE
                                 + mConvertTimeUtils.getDateString((int) currentWeather.getTime());
@@ -73,7 +74,6 @@ public class CurrentViewModel extends BaseObservable implements BaseViewModel {
 
                     @Override
                     public void onError(Throwable e) {
-
                     }
 
                     @Override

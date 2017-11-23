@@ -92,4 +92,9 @@ public class CurrentWeatherFragment extends BaseFragment implements
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mCurrentViewModel.onDestroy();
+    }
 }

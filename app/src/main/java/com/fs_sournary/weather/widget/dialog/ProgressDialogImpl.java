@@ -25,6 +25,7 @@ public class ProgressDialogImpl implements DialogManager {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(mContext);
             mProgressDialog.setMessage(mContext.getString(R.string.title_please_wait));
+            mProgressDialog.setCanceledOnTouchOutside(false);
         }
         mProgressDialog.show();
     }
