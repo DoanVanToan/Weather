@@ -20,21 +20,23 @@ import dagger.Provides;
 class MainModule {
 
     private AppCompatActivity mActivity;
+    private String mLocation;
 
-    MainModule(AppCompatActivity activity) {
+    MainModule(AppCompatActivity activity, String location) {
         mActivity = activity;
+        mLocation = location;
     }
 
     @ActivityScope
     @Provides
     CurrentWeatherFragment provideCurrentWeatherFragment() {
-        return CurrentWeatherFragment.newInstance();
+        return CurrentWeatherFragment.newInstance(mLocation);
     }
 
     @ActivityScope
     @Provides
     ForecastFragment provideForecastFragment() {
-        return ForecastFragment.newInstance();
+        return ForecastFragment.newInstance(mLocation);
     }
 
     @ActivityScope

@@ -1,30 +1,31 @@
-package com.fs_sournary.weather.screen.main.fragment.current;
+package com.fs_sournary.weather.screen.main.fragment.forecast;
 
 import android.support.v4.app.Fragment;
 
 import com.fs_sournary.weather.data.WeatherRepository;
+import com.fs_sournary.weather.data.model.DailyWeather;
 import com.fs_sournary.weather.data.source.remote.WeatherRemoteDataSource;
 import com.fs_sournary.weather.data.source.remote.api.service.WeatherApi;
-import com.fs_sournary.weather.utils.ConvertTimeUtils;
 import com.fs_sournary.weather.utils.scope.FragmentScope;
-import com.fs_sournary.weather.widget.dialog.DialogManager;
-import com.fs_sournary.weather.widget.dialog.progress.ProgressDialogImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dagger.Module;
 import dagger.Provides;
 
 /**
  * Created by fs-sournary.
- * Date on 11/17/17.
+ * Date on 11/20/17.
  * Description:
  */
 
 @Module
-class CurrentModule {
+class ForecastModule {
 
     private Fragment mFragment;
 
-    CurrentModule(Fragment fragment) {
+    ForecastModule(Fragment fragment) {
         mFragment = fragment;
     }
 
@@ -42,22 +43,16 @@ class CurrentModule {
 
     @FragmentScope
     @Provides
-    ConvertTimeUtils provideConverTimeUtils() {
-        return new ConvertTimeUtils();
+    ForecastAdapter provideForecastAdapter() {
+        List<DailyWeather> dataDailyList = new ArrayList<>();
+        return new ForecastAdapter(mFragment.getActivity(), dataDailyList);
     }
 
     @FragmentScope
     @Provides
-    DialogManager provideDialogManager() {
-        return new ProgressDialogImpl(mFragment.getActivity());
-    }
-
-    @FragmentScope
-    @Provides
-    CurrentViewModel provideCurrentViewModel(WeatherRepository weatherRepository,
-                                             ConvertTimeUtils convertTimeUtils,
-                                             DialogManager dialogManager) {
-        return new CurrentViewModel(weatherRepository, convertTimeUtils, dialogManager);
+    ForecastViewModel provideForecastViewModel(ForecastAdapter forecastAdapter,
+                                               WeatherRepository weatherRepository) {
+        return new ForecastViewModel(forecastAdapter, weatherRepository);
     }
 
 }
